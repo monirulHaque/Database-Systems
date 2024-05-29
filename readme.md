@@ -15,7 +15,7 @@ This repository contains all of my lecture contents of the course Database Syste
     - [Database Management System (DBMS)](#database-management-system-dbms)
     - [Database System](#database-system)
     - [Example Database](#example-database)
-  - [Application of Database Systems](#application-of-database-systems)
+    - [Simplified Structure of a Database System](#simplified-structure-of-a-database-system)
   - [A Brief History](#a-brief-history)
     - [Timeline](#timeline)
 
@@ -55,8 +55,10 @@ The DBMS software together with the data itself. Sometimes, the applications are
   <img src = "Media/Lecture1/lec1dbdissect.png" width ="500">
 </p>
 
-## Application of Database Systems
-
+### Simplified Structure of a Database System
+<p align = "center">
+  <img src = "Media/Lecture1/lec1structdb.png" width ="500">
+</p>
 
 ## A Brief History
 Databases have been around for centuries, with record-keeping evolving from stone tablet engravings to file cabinets to digital storage. 
