@@ -18,6 +18,9 @@ This repository contains all of my lecture contents of the course Database Syste
     - [Simplified Structure of a Database System](#simplified-structure-of-a-database-system)
   - [A Brief History](#a-brief-history)
     - [Timeline](#timeline)
+  - [Faciliteis and Functionalities of DBMS](#faciliteis-and-functionalities-of-dbms)
+- [Lecture 2](#lecture-2)
+  - [Database Users](#database-users)
 
 # Course Overview
 ## Tentative Marks Distribution
@@ -110,4 +113,24 @@ In this era Object Oriented Model was also introduced which was used in XML and 
 - **2010's:** Graph Systems, Cloud System, Blockchain database... We are swimming in thousands of different database systems.
 
 To learn more, check out Professor Pavlo's lecture https://www.youtube.com/watch?v=LWS8LEQAUVc&list=PLSE8ODhjZXjYzlLMbX3cR0sxWnRM7CLFn&index=1
+
+## Faciliteis and Functionalities of DBMS
+- A structured way to store and organize data in a logical and efficient manner.
+- Efficient Data Manipulation (Insert, Update, Delete, Retrieve)
+- Data Integrity Enforcement (Ensuring that data remains accurate, consistent, and reliable)
+- Data Security (Control access to data and protect it from unauthorized access) 
+- Concurrency Control (concurrent access to data by multiple users or applications, ensuring that data remains consistent and preventing conflicts or data corruption when multiple users try to modify the same data simultaneously.)
+- Backup and Recovery
+- Scalability and Performance
+
+# Lecture 2
+## Database Users
+- **Actors On the Scene:** Those who actually use and control the database 
+content, and those who design, develop and maintain database applications.
+  - **Database administrators:** Responsible for authorizing access to the database, for coordinating and monitoring its use, acquiring software and hardware resources, controlling its use and monitoring efficiency of operations.
+  - **Database designers:** Responsible to define the content, the structure, the constraints, and functions or transactions against the database. They must communicate with the end-users and understand their needs.
+  - **Software Engineers:** Responsible for implementing the database and its associated applications using a dbms and other programming languages and tools.
+  - **End-users:** They use the data for queries, reports and some of them update the database content.
+- **Workers Behind the Scene:** Those who design and develop the DBMS 
+software and related tools, and the computer systems operators. Example: The engineers who created and are maintaining MySQL, MongoDB etc.
 
