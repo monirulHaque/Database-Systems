@@ -169,8 +169,8 @@ We now present another example, a UNIVERSITY database, to illustrate the ER
 modeling concepts. Suppose that a database is needed to keep track of student 
 enrollments in classes and students’ final grades. After analyzing the miniworld 
 rules and the users’ needs, the requirements for this database were determined to be 
-as follows:
-* The university is organized into colleges (COLLEGE), and each college has a unique name (CName), a main office (COffice) and phone (CPhone), and a particular faculty member who is dean of the college. Each college administers a number of academic departments (DEPT). Each department has a unique name (DName), a unique code number (DCode), a main office (DOffice) and phone (DPhone), and a particular faculty member who chairs the department. We keep track of the start date (CStartDate) when that faculty member began chairing the department.
+as follows: </br>
+- The university is organized into colleges (COLLEGE), and each college has a unique name (CName), a main office (COffice) and phone (CPhone), and a particular faculty member who is dean of the college. Each college administers a number of academic departments (DEPT). Each department has a unique name (DName), a unique code number (DCode), a main office (DOffice) and phone (DPhone), and a particular faculty member who chairs the department. We keep track of the start date (CStartDate) when that faculty member began chairing the department.
 - A department offers a number of courses (COURSE), each of which has a unique course name (CoName), a unique code number (CCode), a course level (Level: this can be coded as 1 for freshman level, 2 for sophomore, 3 for junior, 4 for senior, 5 for MS level, and 6 for PhD level), a course credit hours (Credits), and a course description (CDesc). The database also keeps track of instructors (INSTRUCTOR); and each instructor has a unique identifier (Id), name (IName), office (IOffice), phone (IPhone), and rank (Rank); 
 in addition, each instructor works for one primary academic department.
 - The database will keep student data (STUDENT) and stores each student’s name (SName, composed of first name (FName), middle name (MName), last name (LName)), student id (Sid, unique for every student), address 
@@ -189,7 +189,7 @@ in addition, each instructor works for one primary academic department.
 <summary>
 <span style="font-size:1.2rem">
 <b>Example 3</b> </br>
-Consider the following requirements for an airline reservation system.
+Consider the following requirements for an airline reservation system. </br>
 - The database represents each AIRPORT, keeping its unique AirportCode, the AIRPORT Name, and the City and State in which the AIRPORT is located.
 - Each airline FLIGHT has a unique number, the Airline for the FLIGHT, and the Weekdays on which the FLIGHT is scheduled (for example, every day of the week except Sunday can be coded as X7).
 - A FLIGHT is composed of one or more FLIGHT LEGs (for example, flight number
