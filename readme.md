@@ -182,7 +182,7 @@ in addition, each instructor works for one primary academic department.
 </summary>
 <br>
 <p align="center">
-  <img src="Media\Lecture3\lec3ex2.png"/>
+  <img src="Media\Lecture3\lec3ex2.PNG"/>
 </p>
 </details>
 
@@ -212,6 +212,6 @@ and TYPE are kept.
 </summary>
 <br>
 <p align="center">
-  <img src="Media\Lecture3\lec3ex3.png"/>
+  <img src="Media\Lecture3\lec3ex3.PNG"/>
 </p>
 </details>
