@@ -134,3 +134,26 @@ content, and those who design, develop and maintain database applications.
 - **Workers Behind the Scene:** Those who design and develop the DBMS 
 software and related tools, and the computer systems operators. Example: The engineers who created and are maintaining MySQL, MongoDB etc.
 
+# Lecture 3
+## ER Diagram
+<details>
+<summary>
+<span style="font-size:1.2rem">
+We need to create a database schema design
+based on the following (simplified) requirements
+of the COMPANY Database: </br>
+- The company is organized into DEPARTMENTs.Each department has a name, number and an empyloyee who manages the deppartment. We keep track of the start date of the department manager.
+- A department may have several locations. Each department Each department controls controls a number of a number of PROJECTs. Each project has a unique name, unique number and is located at a single location.
+- We store each EMPLOYEE’s social security number, address, salary, sex, and birthdate.
+  - Each employee works for one department but may
+work on work on several projects several projects.
+  - We keep track of the number of hours per week that an employee currently works on each project.
+  - We also keep track of the direct supervisor of each employee.
+- Each employee may Each employee may have a number of a number of DEPENDENTs. For each dependent, we keep track of their name, sex birthdate and relationship to the employee
+</span>
+</summary>
+<br>
+<p align="center">
+  <img src="Media\Lecture3\lec3ex1.png"/>
+</p>
+</details>
