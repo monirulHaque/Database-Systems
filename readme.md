@@ -21,6 +21,8 @@ This repository contains all of my lecture contents of the course Database Syste
   - [Faciliteis and Functionalities of DBMS](#faciliteis-and-functionalities-of-dbms)
 - [Lecture 2](#lecture-2)
   - [Database Users](#database-users)
+- [Lecture 3](#lecture-3)
+  - [ER Diagram](#er-diagram)
 
 # Course Overview
 ## Tentative Marks Distribution
@@ -139,6 +141,7 @@ software and related tools, and the computer systems operators. Example: The eng
 <details>
 <summary>
 <span style="font-size:1.2rem">
+<b>Example 1</b> </br>
 We need to create a database schema design
 based on the following (simplified) requirements
 of the COMPANY Database: </br>
@@ -155,5 +158,87 @@ work on work on several projects several projects.
 <br>
 <p align="center">
   <img src="Media\Lecture3\lec3ex1.png"/>
+</p>
+</details>
+
+<details>
+<summary>
+<span style="font-size:1.2rem">
+<b>Example 2</b> </br>
+We now present another example, a UNIVERSITY database, to illustrate the ER 
+modeling concepts. Suppose that a database is needed to keep track of student 
+enrollments in classes and students’ final grades. After analyzing the miniworld 
+rules and the users’ needs, the requirements for this database were determined to be 
+as follows (for brevity, we show the chosen entity type names and attribute names 
+for the conceptual schema in parentheses as we describe the requirements; relationship type names are only shown in the ER schema diagram):
+■ The university is organized into colleges (COLLEGE), and each college has a 
+unique name (CName), a main office (COffice) and phone (CPhone), and a 
+particular faculty member who is dean of the college. Each college administers a number of academic departments (DEPT). Each department has a 
+unique name (DName), a unique code number (DCode), a main office 
+(DOffice) and phone (DPhone), and a particular faculty member who chairs 
+the department. We keep track of the start date (CStartDate) when that faculty member began chairing the department.
+■ A department offers a number of courses (COURSE), each of which has a 
+unique course name (CoName), a unique code number (CCode), a course 
+level (Level: this can be coded as 1 for freshman level, 2 for sophomore, 3 for 
+junior, 4 for senior, 5 for MS level, and 6 for PhD level), a course credit 
+hours (Credits), and a course description (CDesc). The database also keeps 
+track of instructors (INSTRUCTOR); and each instructor has a unique identifier (Id), name (IName), office (IOffice), phone (IPhone), and rank (Rank); 
+in addition, each instructor works for one primary academic department.
+■ The database will keep student data (STUDENT) and stores each student’s 
+name (SName, composed of first name (FName), middle name (MName), 
+last name (LName)), student id (Sid, unique for every student), address 
+(Addr), phone (Phone), major code (Major), and date of birth (DoB). A student is assigned to one primary academic department. It is required to keep 
+track of the student’s grades in each section the student has completed.
+■ Courses are offered as sections (SECTION). Each section is related to a single 
+course and a single instructor and has a unique section identifier (SecId). A 
+section also has a section number (SecNo: this is coded as 1, 2, 3, . . . for multiple sections offered during the same semester/year), semester (Sem), year 
+(Year), classroom (CRoom: this is coded as a combination of building code 
+(Bldg) and room number (RoomNo) within the building), and days/times 
+(DaysTime: for example, ‘MWF 9am-9.50am’ or ‘TR 3.30pm-5.20pm’—
+restricted to only allowed days/time values). (Note: The database will keep 
+track of all the sections offered for the past several years, in addition to the 
+current offerings. The SecId is unique for all sections, not just the sections for 
+a particular semester.) The database keeps track of the students in each section, 
+and the grade is recorded when available (this is a many-to-many relationship 
+between students and sections). A section must have at least five students.
+</span>
+</summary>
+<br>
+<p align="center">
+  <img src="Media\Lecture3\lec3ex2.png"/>
+</p>
+</details>
+
+
+<details>
+<summary>
+<span style="font-size:1.2rem">
+<b>Example 3</b> </br>
+Consider the following requirements for an airline reservation system.
+(1) The database represents each AIRPORT, keeping its unique AirportCode, the AIRPORT Name,
+and the City and State in which the AIRPORT is located.
+(2) Each airline FLIGHT has a unique number, the Airline for the FLIGHT, and the Weekdays on
+which the FLIGHT is scheduled (for example, every day of the week except Sunday can be coded as
+X7).
+(3) A FLIGHT is composed of one or more FLIGHT LEGs (for example, flight number
+CO1223 from New York to Los Angeles may have two FLIGHT LEGs: leg 1 from New York to
+Houston and leg 2 from Houston to Los Angeles). Each FLIGHT LEG has a DEPARTURE AIRPORT
+and Scheduled Departure Time, and an ARRIVAL AIRPORT and Scheduled Arrival Time.
+(4) A LEG INSTANCE is an instance of a FLIGHT LEG on a specific Date (for example, CO1223 leg
+1 on July 30, 1989). The actual Departure and Arrival AIRPORTs and
+Times are recorded for each flight leg after the flight leg has been concluded. The
+Number of available seats and the AIRPLANE used in the LEG INSTANCE are also kept.
+(5) The customer RESERVATIONs on each LEG INSTANCE include the Customer Name, Phone,
+and Seat Number(s) for each reservation.
+(6) Information on AIRPLANEs and AIRPLANE TYPEs are also kept. For each AIRPLANE
+TYPE (for example, DC-10), the TypeName, manufacturing Company, and
+Maximum Number of Seats are kept. The AIRPORTs in which planes of this type
+CAN LAND are kept in the database. For each AIRPLANE, the AirplaneId, Total number of seats,
+and TYPE are kept.
+</span>
+</summary>
+<br>
+<p align="center">
+  <img src="Media\Lecture3\lec3ex3.png"/>
 </p>
 </details>
