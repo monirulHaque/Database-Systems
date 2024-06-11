@@ -21,6 +21,21 @@ This repository contains all of my lecture contents of the course Database Syste
   - [Faciliteis and Functionalities of DBMS](#faciliteis-and-functionalities-of-dbms)
 - [Lecture 2](#lecture-2)
   - [Database Users](#database-users)
+  - [When not to use a DBMS](#when-not-to-use-a-dbms)
+  - [Data Models](#data-models)
+  - [Database Schema vs Database State](#database-schema-vs-database-state)
+  - [Three Schema Architecture](#three-schema-architecture)
+    - [Internal Schema](#internal-schema)
+    - [Conceptual Schema](#conceptual-schema)
+    - [External Schema](#external-schema)
+  - [Data Independence](#data-independence)
+    - [Logical Data Independence](#logical-data-independence)
+    - [Physical Data Independence](#physical-data-independence)
+  - [DBMS Languages](#dbms-languages)
+    - [Data Definition Language (DDL)](#data-definition-language-ddl)
+    - [Data Manipulation Language (DML)](#data-manipulation-language-dml)
+    - [Data Control Language (DCL)](#data-control-language-dcl)
+    - [Transaction Control Language (TCL)](#transaction-control-language-tcl)
 - [Lecture 3](#lecture-3)
   - [ER Diagram](#er-diagram)
 
@@ -135,6 +150,47 @@ content, and those who design, develop and maintain database applications.
   - **End-users:** They use the data for queries, reports and some of them update the database content.
 - **Workers Behind the Scene:** Those who design and develop the DBMS 
 software and related tools, and the computer systems operators. Example: The engineers who created and are maintaining MySQL, MongoDB etc.
+
+## When not to use a DBMS
+- Hardware/Security/Service of that DBMS costs more than the available budget. Example: We don't need to buy Improvado DBMS  with 2000 dollar per month when we just need a DBMS for a local e-commerce website. In that case, we can just use free DBMS like MongoDB or MySQL.
+- Database is well defined, no further changes are expected and multiple user access not required.
+- For temporary/short-lived data.
+- In resource-constrained environments like embedded systems or IoT devices. Example: AC, projector, calculator etc.
+- When the data complexity exceeds the DBMS's modeling capabilities. Example: Google Maps can not be stored in MySQL database, it's stored in a graph DBMS.
+- When the data needs to be updated and accessed real time, meaning that the database stores data in JSON files which is synchronized in real-time to every client that is connected to the database. In that case we can not use relational databases like MySQL, we might have to rely on NoSQL languages such as MongoDB, Firebase etc. But the cost will be higher.
+- If the database system is not able to handle the complexity of data because of modeling limitations. For example, complex genome and protein structures can not be stored in MySQL
+
+## Data Models
+A set of concepts to describe the structure of a database, the operations for manipulating these structures, and certain constraints that the database should obey.
+* **Conceptual (high-level, semantic) data models**: 
+These Provide concepts that are close to the way many users perceive data, meaning that these data models don't go into too much detail. These are abstract representations of the important entities/objects, attributes and relationships of the whole database. So, sometimes these are also called entity-based or object-based data models.
+* **Physical (low-level, internal) data models**:
+These provide concepts that describe details of how data is stored in the computer hardware(HDD/SSD/RAM) in that database system. 
+* **Implementation (representational) data models**:
+This type of data model is used to represent the logical part of the database. It's neither low-detailed/abstract as conceptual data models nor as detailed as the physical data models to show structure of the database on hardware. 
+* **Self-Describing Data Models**:
+These models combine the description of data with the data values. Example: MongoDB (the data is stored in objects that look like python dictionaries). 
+
+## Database Schema vs Database State
+
+| Database Schema    | Database State   |
+| ---------------------- | ---------------------- |
+| The description of a database including structure, data type and constraints | Snapshot of the database in a particular moment  |
+| It is not changed frequently | It changes after every insertion, update and delete in the database |
+| ![alt text](Media/Lecture2/database-schema.png) | ![alt text](Media/Lecture2/dbstate.png) |
+
+## Three Schema Architecture
+### Internal Schema
+### Conceptual Schema
+### External Schema
+## Data Independence
+### Logical Data Independence
+### Physical Data Independence
+## DBMS Languages
+### Data Definition Language (DDL)
+### Data Manipulation Language (DML)
+### Data Control Language (DCL)
+### Transaction Control Language (TCL)
 
 # Lecture 3
 ## ER Diagram
