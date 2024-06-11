@@ -53,7 +53,7 @@ There is no marks for attendance this semester but you must attend at least 70% 
 
 ## Consultaion
 Email: ext.monirul.haque@bracu.ac.bd 
-Timing Will be added after confirmation of my routine.
+![Consultation](Media/Consultation.png)
 
 # Lecture 1
 ## Basic Definitions
