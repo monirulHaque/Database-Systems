@@ -33,11 +33,20 @@ This repository contains all of my lecture contents of the course Database Syste
     - [Physical Data Independence](#physical-data-independence)
   - [DBMS Languages](#dbms-languages)
     - [Data Definition Language (DDL)](#data-definition-language-ddl)
+      - [CREATE Command](#create-command)
+      - [DROP Command](#drop-command)
+      - [ALTER Command](#alter-command)
+      - [TRUNCATE Command](#truncate-command)
     - [Data Manipulation Language (DML)](#data-manipulation-language-dml)
+      - [SELECT Command](#select-command)
+      - [INSERT Command](#insert-command)
+      - [UPDATE Command](#update-command)
+      - [DELETE Command](#delete-command)
     - [Data Control Language (DCL)](#data-control-language-dcl)
     - [Transaction Control Language (TCL)](#transaction-control-language-tcl)
 - [Lecture 3](#lecture-3)
   - [ER Diagram](#er-diagram)
+    - [ER Diagram Exampls](#er-diagram-exampls)
 
 # Course Overview
 ## Tentative Marks Distribution
@@ -210,34 +219,101 @@ External schemas at the external level to describe the various user views. It us
 Examples source: https://www.javatpoint.com/dbms-three-schema-architecture
 
 ## Data Independence
+Data Independence is the ability to change the schema at one level without impacting the schema at the next higher level. 
 ### Logical Data Independence
+■ The capacity to change the conceptual schema without having to 
+change the external schemas and their associated application 
+programs.
+■ Example: adding a new column that is not shown in the app or 
+changing the datatype which does not change the external view.
 ### Physical Data Independence
+■ The capacity to change the internal schema without having to 
+change the conceptual schema.
+■ For example, the internal schema may be changed when certain 
+file structures are reorganized or new indexes are created to 
+improve database performance
 ## DBMS Languages
+DBMS Language Commands can be grouped into different categories. 
 ### Data Definition Language (DDL)
-### Data Manipulation Language (DML)
-### Data Control Language (DCL)
-### Transaction Control Language (TCL)
+The SQL DDL category provides commands for defining, deleting and modifying tables in a database. We use the following commands in this category.
+#### CREATE Command
+To create the database or tables inside the database.
+```SQL
+CREATE TABLE table_name (column_name1 datatype(size), column_name2 datatype(size), column_name3 datatype(size));
+```
+#### DROP Command
+To delete a database or a table inside the database. 
+```SQL
+DROP TABLE table_name; 
+```
+#### ALTER Command
+To change the structure of the tables in the database such as changing the name of a table, adding a primary key to a table, or adding or deleting a column in a table.
 
+```SQL
+--Syntax to add a column into a table
+ALTER TABLE table_name ADD (column_name datatype(size));
+--Syntax to add a primary key to a table
+ALTER TABLE table_name ADD primary key (column_name);
+```
+#### TRUNCATE Command
+To remove all records from a table, which will empty the table but not delete the table itself. 
+```SQL
+TRUNCATE TABLE table_name;
+```
+### Data Manipulation Language (DML)
+The SQL DML commands provide the ability to query, delete and update data in the database.  Use the following commands in this category.
+#### SELECT Command
+To retrieve data from tables in the database. 
+```SQL
+SELECT * FROM table_name;
+```
+#### INSERT Command
+To add records of data into an existing table. 
+```SQL
+INSERT INTO table_name (column1, column2, column3) VALUES (value1, value2, value3);
+```
+#### UPDATE Command
+To modify or update data contained within a table in the database. 
+```SQL
+UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+```
+#### DELETE Command
+To delete data from a table in the database.
+```SQL
+DELETE FROM table_name WHERE condition;
+```
+### Data Control Language (DCL)
+You use DCL to deal with the rights and permissions of users of a database system. You can execute SQL commands to perform different types of operations such as create and drop tables. To do this, you need to have user rights set up. This is called user privileges. This category deals with advanced functions or operations in the database. Note that this category can have a generic description of the two main commands. Use the following commands in this category:
+
+**GRANT** Command to provide the user of the database with the privileges required to allow users to access and manipulate the database.
+
+**REVOKE** Command to remove permissions from any user.
+### Transaction Control Language (TCL)
+The TCL commands are used to manage transactions in the database. These are used to manage the changes made to the data in a table by utilizing the DML commands. It also allows SQL statements to be grouped together into logical transactions. This category deals with advanced functions or operations in a database. Note that this category can have a generic description of the two main commands. Use the following commands in this category:
+
+**COMMIT** Command to save all the work you have already done in the database. 
+
+**ROLLBACK** Command to restore a database to the last committed state.
 # Lecture 3
+Relational
 ## ER Diagram
+### ER Diagram Exampls
 <details>
 <summary>
 <span style="font-size:1.2rem">
 <b>Example 1</b> </br>
-We need to create a database schema design
-based on the following (simplified) requirements
-of the COMPANY Database: </br>
+We need to create a database schema design based on the following (simplified) requirements of the COMPANY Database: </br>
 <ul>
-<li> The company is organized into DEPARTMENTs.Each department has a name, number and an empyloyee who manages the deppartment. We keep track of the start date of the department manager.
-<li> A department may have several locations. Each department Each department controls controls a number of a number of PROJECTs. Each project has a unique name, unique number and is located at a single location.
-<li> We store each EMPLOYEE’s social security number, address, salary, sex, and birthdate.
-<ul>
-  <li> Each employee works for one department but may
-work on work on several projects several projects.
-  <li> We keep track of the number of hours per week that an employee currently works on each project.
-  <li> We also keep track of the direct supervisor of each employee.
-</ul>
-<li> Each employee may Each employee may have a number of a number of DEPENDENTs. For each dependent, we keep track of their name, sex birthdate and relationship to the employee
+  <li> The company is organized into DEPARTMENTs. Each department has a name, number and an empyloyee who manages the department. We keep track of the start date of the department manager.</li>
+  <li> A department may have several locations. Each department Each department controls a number of PROJECTs. Each project has a unique name, unique number and is located at a single location.</li>
+  <li> We store each EMPLOYEE’s social security number, address, salary, sex, and birthdate.</li>
+  <ul>
+    <li> Each employee works for one department but may
+  work on work on several projects several projects.</li>
+    <li> We keep track of the number of hours per week that an employee currently works on each project.</li>
+    <li> We also keep track of the direct supervisor of each employee.</li>
+  </ul>
+  <li> Each employee may Each employee may have a number of a number of DEPENDENTs. For each dependent, we keep track of their name, sex birthdate and relationship to the employee </li>
 </ul>
 </span>
 </summary>
