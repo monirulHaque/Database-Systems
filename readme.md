@@ -180,9 +180,35 @@ These models combine the description of data with the data values. Example: Mong
 | ![alt text](Media/Lecture2/database-schema.png) | ![alt text](Media/Lecture2/dbstate.png) |
 
 ## Three Schema Architecture
+<p align="center">
+  <img src="Media/Lecture2/threeschema.png" width=500>
+</p>
+
 ### Internal Schema
+Internal schema at the internal level to describe physical storage structures and access paths (e.g indexes). Typically uses a physical data model.
+<p align="center">
+  <img src="Media/Lecture2/threeschemaphysical.png" width=300>
+</p>
+
 ### Conceptual Schema
+
+Conceptual schema at the conceptual level to describe the structure and constraints for the whole database for a community of users. Typically uses a conceptual or an implementation data model.
+
+<p align="center">
+  <img src="Media/Lecture2/threeschemaconceptual.png" width=300>
+</p>
+
 ### External Schema
+
+External schemas at the external level to describe the various user views. It uses a conceptual data model.
+
+
+<p align="center">
+  <img src="Media/Lecture2/threeschemaexternal.png" width=500>
+</p>
+
+Examples source: https://www.javatpoint.com/dbms-three-schema-architecture
+
 ## Data Independence
 ### Logical Data Independence
 ### Physical Data Independence
