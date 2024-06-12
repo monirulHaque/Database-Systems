@@ -50,10 +50,12 @@ This repository contains all of my lecture contents of the course Database Syste
     - [Attributes / Fields](#attributes--fields)
       - [Key attributes](#key-attributes)
         - [Primary Key](#primary-key)
-        - [Forein Key](#forein-key)
+        - [Foreign Key](#foreign-key)
+        - [Primary Key vs Foreign Key](#primary-key-vs-foreign-key)
     - [Attribute value / Column value / Data element / Unit of data](#attribute-value--column-value--data-element--unit-of-data)
     - [Records / Rows / Entities](#records--rows--entities)
     - [Data types](#data-types)
+  - [Software Development Stages](#software-development-stages)
   - [ER (Entity Relationship) Diagram](#er-entity-relationship-diagram)
     - [ER Diagram Exampls](#er-diagram-exampls)
 - [References](#references)
@@ -157,7 +159,7 @@ To learn more, check out Professor Pavlo's lecture https://www.youtube.com/watch
 - Data Security (Control access to data and protect it from unauthorized access) 
 - Concurrency Control (concurrent access to data by multiple users or applications, ensuring that data remains consistent and preventing conflicts or data corruption when multiple users try to modify the same data simultaneously.)
 - Backup and Recovery
-- Scalability and Performance
+- Scalability and Performance (Can keep good performance even if the database becomes large)
 
 </br></br>
 
@@ -315,11 +317,11 @@ The TCL commands are used to manage transactions in the database. These are used
 The relational model represents how data is stored in Relational Databases using multiple tables with their relations to each other.
 
 <p align="center">
-  <img src="Media\Lecture3\relational_database_example.png" width='500'/>
+  <img src="Media\Lecture1\lec1dbdissect_t.png" width='500'/>
 </p>
 
 <p align="center">
-  <img src="Media\Lecture1\lec1dbdissect_t.png" width='500'/>
+  <img src="Media\Lecture3\relational_database_example.png" width='500'/>
 </p>
 
 ### Table / Entity Set / Entity Type
@@ -329,9 +331,26 @@ A table contains all the fields, attributes and records for a type of entity. A 
 Column headings are known as fields. Each field contains a different attribute. For every table, a unit of data is entered into each field.
 
 #### Key attributes
-Attributes that are distinct for each 
+Attributes that are distinct for each entity in the table are called Key attributes.
 ##### Primary Key
-##### Forein Key
+A primary key is a special attribute or field within a database table that uniquely identifies each record or row in that table. It acts as a distinctive label for every information stored in the table, ensuring that no two records have the same identifier. This unique identification helps locate, access, and manipulate specific data within the table.
+
+##### Foreign Key
+Tables in a relational database do not stay isolated from each other. They need to have relationships between them. Tables are linked with one another through a key column (the primary key) of one table that’s also present in the related table as a foreign key.
+
+##### Primary Key vs Foreign Key
+| Basis           | Primary Key                                                                                         | Foreign Key                                                                                               |
+| --------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Definition      | A primary key is a unique identifier for each record in a table.                                    | A foreign key establishes a relationship between tables by referencing the primary key of another table.  |
+| Basic           | Ensures uniqueness and data integrity within a single table.                                        | Establishes relationships and maintains referential integrity between tables.                             |
+| NULL            | Does not allow NULL values in the primary key field.                                                | Allows NULL values in the foreign key field, indicating a missing or unspecified relationship.            |
+| Count           | Only one primary key can exist per table.                                                           | Multiple foreign keys can exist within a table, depending on the relationships with other tables.         |
+| Duplication     | No duplicate primary key values are allowed within the table.                                       | Can contain duplicate foreign key values, reflecting multiple records associated with the same reference. |
+| Indexing        | Primary keys are automatically indexed to enhance data retrieval speed.                             | Foreign keys can be indexed but are not automatically indexed.                                            |
+| Deletion        | Deleting a record with a primary key constraint can affect referential integrity in related tables. | Deleting a record with a foreign key constraint can be restricted or cascade to maintain integrity.       |
+| Insertion       | Each new record must have a unique primary key value assigned.                                      | The foreign key can reference an existing primary key value or be NULL if the relationship is optional.   |
+| Temporary table | Primary keys can be applied to temporary tables.                                                    | Foreign keys can also be applied to temporary tables to establish relationships.                          |
+| Relationship    | Primary keys define the basis for establishing relationships with other tables.                     | Foreign keys establish relationships and connect data between related tables.                             |
 
 ### Attribute value / Column value / Data element / Unit of data
 Each individual piece of data entered into a column is a unit of data. These units are also called data elements or column values.
@@ -360,6 +379,7 @@ And miscellaneous data types such as: </br>
 Character Large Object (CLOB), for storing a large block of text in some form of text encoding.  </br>
 Binary Large Object (BLOB), for storing a collection of binary data such as images. </br>
 
+## Software Development Stages
 
 ## ER (Entity Relationship) Diagram 
 ### ER Diagram Exampls
