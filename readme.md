@@ -45,8 +45,18 @@ This repository contains all of my lecture contents of the course Database Syste
     - [Data Control Language (DCL)](#data-control-language-dcl)
     - [Transaction Control Language (TCL)](#transaction-control-language-tcl)
 - [Lecture 3](#lecture-3)
-  - [ER Diagram](#er-diagram)
+  - [Relational Data Models](#relational-data-models)
+    - [Table / Entity Set / Entity Type](#table--entity-set--entity-type)
+    - [Attributes / Fields](#attributes--fields)
+      - [Key attributes](#key-attributes)
+        - [Primary Key](#primary-key)
+        - [Forein Key](#forein-key)
+    - [Attribute value / Column value / Data element / Unit of data](#attribute-value--column-value--data-element--unit-of-data)
+    - [Records / Rows / Entities](#records--rows--entities)
+    - [Data types](#data-types)
+  - [ER (Entity Relationship) Diagram](#er-entity-relationship-diagram)
     - [ER Diagram Exampls](#er-diagram-exampls)
+- [References](#references)
 
 # Course Overview
 ## Tentative Marks Distribution
@@ -81,7 +91,7 @@ The DBMS software together with the data itself. Sometimes, the applications are
 ### Example Database
 <p align = "center">
   <img src = "Media/Lecture1/lec1exdb.png">
-  <img src = "Media/Lecture1/lec1dbdissect.png" width ="500">
+  <img src = "Media/Lecture1/lec1dbdissect_t.png" width ="500">
 </p>
 
 ### Simplified Structure of a Database System
@@ -148,6 +158,8 @@ To learn more, check out Professor Pavlo's lecture https://www.youtube.com/watch
 - Concurrency Control (concurrent access to data by multiple users or applications, ensuring that data remains consistent and preventing conflicts or data corruption when multiple users try to modify the same data simultaneously.)
 - Backup and Recovery
 - Scalability and Performance
+
+</br></br>
 
 # Lecture 2
 ## Database Users
@@ -294,9 +306,62 @@ The TCL commands are used to manage transactions in the database. These are used
 **COMMIT** Command to save all the work you have already done in the database. 
 
 **ROLLBACK** Command to restore a database to the last committed state.
+</br>
+
+</br></br>
+
 # Lecture 3
-Relational
-## ER Diagram
+## Relational Data Models
+The relational model represents how data is stored in Relational Databases using multiple tables with their relations to each other.
+
+<p align="center">
+  <img src="Media\Lecture3\relational_database_example.png" width='500'/>
+</p>
+
+<p align="center">
+  <img src="Media\Lecture1\lec1dbdissect_t.png" width='500'/>
+</p>
+
+### Table / Entity Set / Entity Type
+A table contains all the fields, attributes and records for a type of entity. A database will most probably contain more than one table.
+
+### Attributes / Fields
+Column headings are known as fields. Each field contains a different attribute. For every table, a unit of data is entered into each field.
+
+#### Key attributes
+Attributes that are distinct for each 
+##### Primary Key
+##### Forein Key
+
+### Attribute value / Column value / Data element / Unit of data
+Each individual piece of data entered into a column is a unit of data. These units are also called data elements or column values.
+
+### Records / Rows / Entities
+A record consists of a collection of data for each entity. It’s also known as a row in the table.
+
+
+
+### Data types
+To keep the data consistent from one record to the next, an appropriate data type is assigned to each column. The data type of a column determines what type of data can be stored in each column.</br>
+Data types are also a way of classifying data values or column values. Different kinds of data values or column values require different amounts of memory to store them. Different operations can be performed on those column values based on their datatypes. </br>
+
+Some common data types used in databases are: </br>
+
+**Numeric data types** such as INT, TINYINT, BIGINT, FLOAT and REAL. </br>
+
+**Date and time data types** such as DATE, TIME and DATETIME. </br>
+
+**Character and string data types** such as CHAR and VARCHAR. </br>
+
+**Binary data types** such as BINARY and VARBINARY. </br>
+
+And miscellaneous data types such as: </br>
+
+Character Large Object (CLOB), for storing a large block of text in some form of text encoding.  </br>
+Binary Large Object (BLOB), for storing a collection of binary data such as images. </br>
+
+
+## ER (Entity Relationship) Diagram 
 ### ER Diagram Exampls
 <details>
 <summary>
@@ -377,3 +442,9 @@ and TYPE are kept.
   <img src="Media\Lecture3\lec3ex3.PNG"/>
 </p>
 </details>
+
+# References
+* Fundamentals of Database Systems (by Ramez Elmasri, Shamkant B. Navathe)
+* Database Systems: A Practical Approach to Design, Implementation, and Management (by Thomas Connolly, Carolyn Begg)
+* Introduction to Databases by Meta (Coursera)
+* https://www.javatpoint.com/sql-tutorial
