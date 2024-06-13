@@ -57,7 +57,23 @@ This repository contains all of my lecture contents of the course Database Syste
     - [Data types](#data-types)
   - [Software Development Stages](#software-development-stages)
   - [ER (Entity Relationship) Diagram](#er-entity-relationship-diagram)
-    - [ER Diagram Exampls](#er-diagram-exampls)
+    - [Entities](#entities)
+    - [Attributes](#attributes)
+      - [Composite Attribute](#composite-attribute)
+      - [Multi-valued Attribute](#multi-valued-attribute)
+      - [Derived Attribute](#derived-attribute)
+      - [Key Attribute](#key-attribute)
+    - [Relationships](#relationships)
+      - [Relationship Types](#relationship-types)
+        - [One to One](#one-to-one)
+        - [One to Many](#one-to-many)
+        - [Many to One](#many-to-one)
+        - [Many to Many](#many-to-many)
+      - [Participation Constraints](#participation-constraints)
+        - [Total Participation / Mandatory Participation / Existence Dependency](#total-participation--mandatory-participation--existence-dependency)
+        - [Partial Participation / Optional Participation](#partial-participation--optional-participation)
+    - [Weak Entity Types](#weak-entity-types)
+    - [ER Diagram Examples](#er-diagram-examples)
 - [References](#references)
 
 # Course Overview
@@ -380,29 +396,117 @@ Character Large Object (CLOB), for storing a large block of text in some form of
 Binary Large Object (BLOB), for storing a collection of binary data such as images. </br>
 
 ## Software Development Stages
+<p align="center">
+  <img src="Media\Lecture3\softdesign.PNG"/>
+</p>
+
+The database design process involves the following steps: </br>
+- Requirements collection and analysis, where designers interview users to understand their data needs and functional requirements. 
+- Conceptual design, where a high-level conceptual schema is created using a conceptual data model, describing entity types, relationships, and constraints. 
+- Logical design, where the conceptual schema is transformed into the implementation data model of the chosen DBMS. 
+- Physical design, where internal storage structures, file organizations, indexes, and access paths are specified. </br>
+Throughout this process, application programs are designed and implemented as database transactions corresponding to the specified functional requirements.
 
 ## ER (Entity Relationship) Diagram 
-### ER Diagram Exampls
+It is a high-level Conceptual Data Model. This model is used to visualize the data elements and relationship among them for a specified system. </br>
+
+The ER model describes data as entities, relationships, and attributes.
+
+
+
+### Entities
+The basic concept that the ER model represents is
+an entity, which is a thing or object in the real world with an independent existence. </br>
+An entity may be an object with a physical existence (for example, a particular person, car, house, or employee) or it may be an object with a conceptual existence (for instance, a company, a job, or a university course).
+### Attributes
+Each entity has attributes—the particular properties that describe it. </br>
+For example, an EMPLOYEE entity may be described by the employee’s name, age, address, salary, and job. </br>
+Most attributes are simple single-valued stored attributes. There are some other kinds of attributes too.
+#### Composite Attribute
+Composite attributes can be divided into smaller subparts, which represent more basic attributes with independent meanings. </br>
+For example, Name can be divided into First Name, Middle Name and Last Name. Address attribute can be divided into Street_address, City, State, and Zip.
+#### Multi-valued Attribute
+A multivalued attribute may have lower and upper bounds to constrain the number of values allowed
+for each individual entity. </br>
+For example, the Colors attribute of a car may be restricted to have between one and two values, if we assume that a car model can have two colors at most. Also a people can have multiple phone numbers, so phone_no. can be a multi-valued attribute.
+#### Derived Attribute
+In some cases, two (or more) attribute values are related—for example, the Age and Birth_date attributes of a person. For a particular person entity, the value of Age can be determined from the current (today’s) date and the value of that person’s Birth_date. So, Age can be a Derived Attribute.
+#### Key Attribute
+Attributes that are distinct for each entity in the table are called Key attributes. </br>
+For example, every student of BRACU has a unique student_id. So, student_id can be a key attribute in a student entity. </br>
+Entities can have multiple keys and key attributes can be composite attributes too.
+
+<p align="center">
+  <img src="Media\Lecture3\ERD_Components_Entity_Atrributes.jpg"/>
+  <i>Figure: Components of ER Diagram (Entities and Attributes)</i>
+</p>
+
+Consider the following Car Entity. Each of the Vehicle_id and Registration attributes of the entity type CAR is a key in its own right. The Registration attribute is an example of a composite key formed from two simple component attributes, State and Number, neither of which is a key on its own. Year, Model and Make can be simple  simple single-valued stored attributes and Color is a multivalued attribute as a Car model can have a few different colors on it. 
+<p align="center">
+  <img src="Media\Lecture3\attributes.PNG"/>
+</p>
+
+### Relationships
+It is used to visualize how entities are related to each other.
+#### Relationship Types
+##### One to One
+When only one instance of an entity is associated with the relationship, then it is known as one to one relationship. </br>
+For example, a female can marry to one male
+##### One to Many
+When only one instance of the entity on the left, and more than one instance of an entity on the right associates with the relationship then this is known as a one-to-many relationship. </br>
+For example, a mother can have multiple children but a child can have only one biological mother.
+##### Many to One
+When more than one instance of the entity on the left, and only one instance of an entity on the right associates with the relationship then it is known as a many-to-one relationship. </br>
+For example, multiple employees work under a single manager in a branch.
+##### Many to Many
+When more than one instance of the entity on the left, and more than one instance of an entity on the right associates with the relationship then it is known as a many-to-many relationship. </br>
+For example, an employee can work on multiple projects in a company and every projects have multiple employees working on them.
+
+#### Participation Constraints
+Participation constraints in an Entity-Relationship (ER) diagram specify whether the existence of an entity instance in an entity set is possible without its participation in a particular relationship set. In simpler terms, it defines whether an entity's existence depends on its relationship with another entity or not. It is also called minimum cardinality constraint.
+##### Total Participation / Mandatory Participation / Existence Dependency
+This constraint indicates that every instance of the entity must participate in the relationship. For example, consider the relationship between "Employee" and "Department" entities. A total participation constraint on the "Employee" side means that every employee must belong to a department. 
+##### Partial Participation / Optional Participation
+This constraint indicates that some instances of the entity may or may not participate in the relationship. For example, in the relationship between "Student" and "Course" entities, a partial participation constraint on the "Student" side means that a student can exist without enrolling in any course.
+
+<p align="center">
+  <img src="Media/Lecture3/ERD_Components _Relationships.jpg"/>
+  <i>Figure: Components of ER Diagram (Relationships and Participation)</i>
+</p>
+
+### Weak Entity Types
+Entity types that do not have key attributes of their own are called weak entity types. Entities belonging to a weak entity type are identified by being related to specific entities from another entity type in combination with one of their attribute values. We call this other entity type the identifying or owner entity type and we call the relationship type that relates a weak entity type to its owner the identifying relationship of the weak entity type. </br>
+
+A weak entity type always has a total participation constraint (existence dependency) with respect to its identifying relationship because a weak entity cannot be identified without an owner entity. </br>
+
+Consider the example 1 in [ER Diagram Examples](#er-diagram-examples) entity type DEPENDENT, related to EMPLOYEE, which is used to keep
+track of the dependents of each employee via a 1:N relationship. In our example, the attributes of DEPENDENT are Name (the first name of the dependent), Birth_date, Sex, and Relationship (to the employee). Two dependents of two distinct
+employees may, by chance, have the same values for Name, Birth_date, Sex, and Relationship, but they are still distinct entities. They are identified as distinct entities only after determining the particular employee entity to which each dependent is related. Each employee entity is said to own the dependent entities that are related to it.
+</br>
+
+However, not every existence dependency results in a weak entity type. For example, a DRIVER_LICENSE entity cannot exist unless it is related to a PERSON entity, even though it has its own key (License_number) and hence is not a weak entity
+
+### ER Diagram Examples
 <details>
 <summary>
 <span style="font-size:1.2rem">
 <b>Example 1</b> </br>
 We need to create a database schema design based on the following (simplified) requirements of the COMPANY Database: </br>
 <ul>
-  <li> The company is organized into DEPARTMENTs. Each department has a name, number and an empyloyee who manages the department. We keep track of the start date of the department manager.</li>
-  <li> A department may have several locations. Each department Each department controls a number of PROJECTs. Each project has a unique name, unique number and is located at a single location.</li>
-  <li> We store each EMPLOYEE’s social security number, address, salary, sex, and birthdate.</li>
-  <ul>
-    <li> Each employee works for one department but may
-  work on work on several projects several projects.</li>
-    <li> We keep track of the number of hours per week that an employee currently works on each project.</li>
-    <li> We also keep track of the direct supervisor of each employee.</li>
-  </ul>
-  <li> Each employee may Each employee may have a number of a number of DEPENDENTs. For each dependent, we keep track of their name, sex birthdate and relationship to the employee </li>
+  <li> The company is organized into departments. Each department has a unique name, a unique number, and a particular employee who manages the department. We keep track of the start date when that employee began managing the department. A department may have several locations.</li>
+  <li> A department controls a number of projects, each of which has a unique name, a unique number, and a single location.</li>
+  <li> The database will store each employee’s name, Social Security number, address, salary, sex (gender), and birth date. An employee is assigned to one department, but may work on several projects, which are not necessarily controlled by the same department. It is required to keep track of the current number of hours per week that an employee works on each project, as well as the direct supervisor of each employee (who is another employee). </li>
+  <li>The database will keep track of the dependents of each employee for insurance purposes, including each dependent’s first name, sex, birth date, and relationship to the employee.</li>
 </ul>
 </span>
 </summary>
 <br>
+
+<p align="center">
+  <img src="Media\Lecture3\lec3ex1(old).png"/>
+</p>
+
+Alternative Notations for the above ER diagram:
 <p align="center">
   <img src="Media\Lecture3\lec3ex1.png"/>
 </p>
