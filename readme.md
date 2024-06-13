@@ -192,7 +192,7 @@ content, and those who design, develop and maintain database applications.
 software and related tools, and the computer systems operators. Example: The engineers who created and are maintaining MySQL, MongoDB etc.
 
 ## When not to use a DBMS
-- Hardware/Security/Service of that DBMS costs more than the available budget. Example: We don't need to buy Improvado DBMS  with 2000 dollar per month when we just need a DBMS for a local e-commerce website. In that case, we can just use free DBMS like MongoDB or MySQL.
+- Hardware/Security/Service of that DBMS costs more than the available budget. Example: We don't need to buy Improvado DBMS  with 2000 dollar per month when we just need a DBMS for a local e-commerce website. In that case, we can just use free DBMS like MongoDB or MySQL. </br>
 - Database is well defined, no further changes are expected and multiple user access not required.
 - For temporary/short-lived data.
 - In resource-constrained environments like embedded systems or IoT devices. Example: AC, projector, calculator etc.
@@ -251,16 +251,16 @@ Examples source: https://www.javatpoint.com/dbms-three-schema-architecture
 
 ## Data Independence
 Data Independence is the ability to change the schema at one level without impacting the schema at the next higher level. 
-### Logical Data Independence
-■ The capacity to change the conceptual schema without having to 
+### Logical Data Independence 
+The capacity to change the conceptual schema without having to 
 change the external schemas and their associated application 
-programs.
-■ Example: adding a new column that is not shown in the app or 
+programs. </br>
+Example: adding a new column that is not shown in the app or 
 changing the datatype which does not change the external view.
 ### Physical Data Independence
-■ The capacity to change the internal schema without having to 
-change the conceptual schema.
-■ For example, the internal schema may be changed when certain 
+The capacity to change the internal schema without having to 
+change the conceptual schema. </br>
+For example, the internal schema may be changed when certain 
 file structures are reorganized or new indexes are created to 
 improve database performance
 ## DBMS Languages
