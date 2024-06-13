@@ -398,7 +398,7 @@ Binary Large Object (BLOB), for storing a collection of binary data such as imag
 
 ## Software Development Stages
 <p align="center">
-  <img src="Media\Lecture3\softdesign.PNG"/>
+  <img src="Media\Lecture3\softdesign.png"/>
 </p>
 
 The database design process involves the following steps: </br>
