@@ -73,6 +73,7 @@ This repository contains all of my lecture contents of the course Database Syste
         - [Total Participation / Mandatory Participation / Existence Dependency](#total-participation--mandatory-participation--existence-dependency)
         - [Partial Participation / Optional Participation](#partial-participation--optional-participation)
     - [Weak Entity Types](#weak-entity-types)
+    - [UML Class Diagrams](#uml-class-diagrams)
     - [ER Diagram Examples](#er-diagram-examples)
 - [References](#references)
 
@@ -486,6 +487,9 @@ employees may, by chance, have the same values for Name, Birth_date, Sex, and Re
 
 However, not every existence dependency results in a weak entity type. For example, a DRIVER_LICENSE entity cannot exist unless it is related to a PERSON entity, even though it has its own key (License_number) and hence is not a weak entity
 
+### UML Class Diagrams
+To be added
+
 ### ER Diagram Examples
 <details>
 <summary>
@@ -511,6 +515,11 @@ Alternative Notations for the above ER diagram:
   <img src="Media\Lecture3\lec3ex1.png"/>
 </p>
 </details>
+
+UML Class Diagram
+<p align="center">
+  <img src="Media\Lecture3\lec3ex1uml.png"/>
+</p>
 
 <details>
 <summary>
