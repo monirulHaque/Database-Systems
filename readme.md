@@ -75,6 +75,9 @@ This repository contains all of my lecture contents of the course Database Syste
     - [Weak Entity Types](#weak-entity-types)
     - [UML Class Diagrams](#uml-class-diagrams)
     - [ER Diagram Examples](#er-diagram-examples)
+      - [Examples from the Textbook](#examples-from-the-textbook)
+      - [Examples from the Practice Sheet](#examples-from-the-practice-sheet)
+  - [Relationships of Higher Degree](#relationships-of-higher-degree)
 - [References](#references)
 
 # Course Overview
@@ -247,7 +250,7 @@ External schemas at the external level to describe the various user views. It us
   <img src="Media/Lecture2/threeschemaexternal.png" width=500>
 </p>
 
-Examples source: https://www.javatpoint.com/dbms-three-schema-architecture
+*Examples source: https://www.javatpoint.com/dbms-three-schema-architecture*
 
 ## Data Independence
 Data Independence is the ability to change the schema at one level without impacting the schema at the next higher level. 
@@ -489,14 +492,21 @@ employees may, by chance, have the same values for Name, Birth_date, Sex, and Re
 However, not every existence dependency results in a weak entity type. For example, a DRIVER_LICENSE entity cannot exist unless it is related to a PERSON entity, even though it has its own key (License_number) and hence is not a weak entity
 
 ### UML Class Diagrams
-To be added
-
+- Represent classes (similar to entity types) as large boxes with three sections:
+  - Top section includes entity type (class) name
+  - Second section includes attributes
+  - Third section includes class operations (operations are not in basic ER model)
+- Relationships (called associations) represented as lines connecting the classes
+- Other UML terminology also differs from ER terminology
+- Used in database design and object-oriented software design
+- UML has many other types of diagrams for software designs (You will learn more Software Design Courses) </br>
+An example of UML class diagram is shown in Example 1.
 ### ER Diagram Examples
-<details>
+<details open>
 <summary>
 <span style="font-size:1.2rem">
 <b>Example 1</b> </br>
-We need to create a database schema design based on the following (simplified) requirements of the COMPANY Database: </br>
+We need to design an ER diagram based on the following (simplified) requirements of the COMPANY Database: </br>
 <ul>
   <li> The company is organized into departments. Each department has a unique name, a unique number, and a particular employee who manages the department. We keep track of the start date when that employee began managing the department. A department may have several locations.</li>
   <li> A department controls a number of projects, each of which has a unique name, a unique number, and a single location.</li>
@@ -507,37 +517,43 @@ We need to create a database schema design based on the following (simplified) r
 </summary>
 <br>
 
+<b>Solution</b>
+
+
 <p align="center">
   <img src="Media\Lecture3\lec3ex1(old).png"/>
 </p>
+
+An explanation of the relationships: </br>
+* A department controls many projects.
+* A department is managed by one employee.
+* An employee works on many projects through the WORKS_ON relationship.
+* A project is done by multiple employees.
+* An employee has multiple dependents.
+* Employees can have a supervisor who is another employee.
 
 Alternative Notations for the above ER diagram:
 <p align="center">
   <img src="Media\Lecture3\lec3ex1.png"/>
 </p>
-</details>
 
 UML Class Diagram
 <p align="center">
   <img src="Media\Lecture3\lec3ex1uml.png"/>
 </p>
+</details>
 
+#### Examples from the Textbook
 <details>
 <summary>
 <span style="font-size:1.2rem">
 <b>Example 2</b> </br>
-We now present another example, a UNIVERSITY database, to illustrate the ER 
-modeling concepts. Suppose that a database is needed to keep track of student 
-enrollments in classes and students’ final grades. After analyzing the miniworld 
-rules and the users’ needs, the requirements for this database were determined to be 
-as follows: </br>
+Draw the ER diagram of a UNIVERSITY database. Suppose the database is needed to keep track of student enrollments in classes and students’ final grades. After analyzing the miniworld rules and the users’ needs, the requirements for this database were determined to be as follows: </br>
 <ul>
-<li> The university is organized into colleges (COLLEGE), and each college has a unique name (CName), a main office (COffice) and phone (CPhone), and a particular faculty member who is dean of the college. Each college administers a number of academic departments (DEPT). Each department has a unique name (DName), a unique code number (DCode), a main office (DOffice) and phone (DPhone), and a particular faculty member who chairs the department. We keep track of the start date (CStartDate) when that faculty member began chairing the department.
-<li> A department offers a number of courses (COURSE), each of which has a unique course name (CoName), a unique code number (CCode), a course level (Level: this can be coded as 1 for freshman level, 2 for sophomore, 3 for junior, 4 for senior, 5 for MS level, and 6 for PhD level), a course credit hours (Credits), and a course description (CDesc). The database also keeps track of instructors (INSTRUCTOR); and each instructor has a unique identifier (Id), name (IName), office (IOffice), phone (IPhone), and rank (Rank); 
-in addition, each instructor works for one primary academic department.
-<li> The database will keep student data (STUDENT) and stores each student’s name (SName, composed of first name (FName), middle name (MName), last name (LName)), student id (Sid, unique for every student), address 
-(Addr), phone (Phone), major code (Major), and date of birth (DoB). A student is assigned to one primary academic department. It is required to keep track of the student’s grades in each section the student has completed.
-<li> Courses are offered as sections (SECTION). Each section is related to a single course and a single instructor and has a unique section identifier (SecId). A section also has a section number (SecNo: this is coded as 1, 2, 3, . . . for multiple sections offered during the same semester/year), semester (Sem), year (Year), classroom (CRoom: this is coded as a combination of building code (Bldg) and room number (RoomNo) within the building), and days/times (DaysTime: for example, ‘MWF 9am-9.50am’ or ‘TR 3.30pm-5.20pm’—restricted to only allowed days/time values). (Note: The database will keep track of all the sections offered for the past several years, in addition to the current offerings. The SecId is unique for all sections, not just the sections for a particular semester.) The database keeps track of the students in each section, and the grade is recorded when available (this is a many-to-many relationship between students and sections). A section must have at least five students.
+<li> The university is organized into colleges (COLLEGE), and each college has a unique name (CName), a main office (COffice) and phone (CPhone), and a particular faculty member who is dean of the college. Each college administers a number of academic departments (DEPT). Each department has a unique name (DName), a unique code number (DCode), a main office (DOffice) and phone (DPhone), and a particular faculty member who chairs the department. We keep track of the start date (CStartDate) when that faculty member began chairing the department. </li>
+<li> A department offers a number of courses (COURSE), each of which has a unique course name (CoName), a unique code number (CCode), a course level (Level: this can be coded as 1 for freshman level, 2 for sophomore, 3 for junior, 4 for senior, 5 for MS level, and 6 for PhD level), a course credit hours (Credits), and a course description (CDesc). The database also keeps track of instructors (INSTRUCTOR); and each instructor has a unique identifier (Id), name (IName), office (IOffice), phone (IPhone), and rank (Rank); in addition, each instructor works for one primary academic department. </li>
+<li> The database will keep student data (STUDENT) and stores each student’s name (SName, composed of first name (FName), middle name (MName), last name (LName)), student id (Sid, unique for every student), address (Addr), phone (Phone), major code (Major), and date of birth (DoB). A student is assigned to one primary academic department. It is required to keep track of the student’s grades in each section the student has completed. </li>
+<li> Courses are offered as sections (SECTION). Each section is related to a single course and a single instructor and has a unique section identifier (SecId). A section also has a section number (SecNo: this is coded as 1, 2, 3, . . . for multiple sections offered during the same semester/year), semester (Sem), year (Year), classroom (CRoom: this is coded as a combination of building code (Bldg) and room number (RoomNo) within the building), and days/times (DaysTime: for example, ‘MWF 9am-9.50am’ or ‘TR 3.30pm-5.20pm’—restricted to only allowed days/time values). (Note: The database will keep track of all the sections offered for the past several years, in addition to the current offerings. The SecId is unique for all sections, not just the sections for a particular semester.) The database keeps track of the students in each section, and the grade is recorded when available (this is a many-to-many relationship between students and sections). A section must have at least five students. </li>
 </ul>
 </span>
 </summary>
@@ -554,20 +570,13 @@ in addition, each instructor works for one primary academic department.
 <b>Example 3</b> </br>
 Consider the following requirements for an airline reservation system. </br>
 <ul>
-<li> The database represents each AIRPORT, keeping its unique AirportCode, the AIRPORT Name, and the City and State in which the AIRPORT is located.
-<li> Each airline FLIGHT has a unique number, the Airline for the FLIGHT, and the Weekdays on which the FLIGHT is scheduled (for example, every day of the week except Sunday can be coded as X7).
-<li> A FLIGHT is composed of one or more FLIGHT LEGs (for example, flight number
-CO1223 from New York to Los Angeles may have two FLIGHT LEGs: leg 1 from New York to
-Houston and leg 2 from Houston to Los Angeles). Each FLIGHT LEG has a DEPARTURE AIRPORT
-and Scheduled Departure Time, and an ARRIVAL AIRPORT and Scheduled Arrival Time.
-<li> A LEG INSTANCE is an instance of a FLIGHT LEG on a specific Date (for example, CO1223 leg 1 on July 30, 1989). The actual Departure and Arrival AIRPORTs and
-Times are recorded for each flight leg after the flight leg has been concluded. The
-Number of available seats and the AIRPLANE used in the LEG INSTANCE are also kept.
-<li> The customer RESERVATIONs on each LEG INSTANCE include the Customer Name, Phone,
-and Seat Number(s) for each reservation.
-<li> Information on AIRPLANEs and AIRPLANE TYPEs are also kept. For each AIRPLANE
-TYPE (for example, DC-10), the TypeName, manufacturing Company, and Maximum Number of Seats are kept. The AIRPORTs in which planes of this type CAN LAND are kept in the database. For each AIRPLANE, the AirplaneId, Total number of seats,
-and TYPE are kept.
+<li> The database represents each AIRPORT, keeping its unique AirportCode, the AIRPORT Name, and the City and State in which the AIRPORT is located. </li>
+<li> Each airline FLIGHT has a unique number, the Airline for the FLIGHT, and the Weekdays on which the FLIGHT is scheduled (for example, every day of the week except Sunday can be coded as X7). </li>
+<li> A FLIGHT is composed of one or more FLIGHT LEGs (for example, flight number CO1223 from New York to Los Angeles may have two FLIGHT LEGs: leg 1 from New York to Houston and leg 2 from Houston to Los Angeles). Each FLIGHT LEG has a DEPARTURE AIRPORT and Scheduled Departure Time, and an ARRIVAL AIRPORT and Scheduled Arrival Time. </li>
+<li> A LEG INSTANCE is an instance of a FLIGHT LEG on a specific Date (for example, CO1223 leg 1 on July 30, 1989). The actual Departure and Arrival AIRPORTs and Times are recorded for each flight leg after the flight leg has been concluded. The Number of available seats and the AIRPLANE used in the LEG INSTANCE are also kept. </li>
+<li> The customer RESERVATIONs on each LEG INSTANCE include the Customer Name, Phone, and Seat Number(s) for each reservation. </li>
+<li> Information on AIRPLANEs and AIRPLANE TYPEs are also kept. For each AIRPLANE TYPE (for example, DC-10), the TypeName, manufacturing Company, and Maximum Number of Seats are kept. The AIRPORTs in which planes of this type CAN LAND are kept in the database. For each AIRPLANE, the AirplaneId, Total number of seats,
+and TYPE are kept. </li>
 </ul>
 </span>
 </summary>
@@ -576,6 +585,45 @@ and TYPE are kept.
   <img src="Media\Lecture3\lec3ex3.PNG"/>
 </p>
 </details>
+
+#### Examples from the Practice Sheet
+Try it yourself first. The solutions are available in the practice sheet.
+<details>
+<summary>
+<span style="font-size:1.2rem">
+<b>Example 4</b> </br>
+Suppose you are given the following requirements for a simple database for the National Hockey League (NHL): </br>
+<ul>
+  <li>The NHL has many teams, </li>
+  <li>Each team has a unique name, a city and a coach </li>
+  <li>Each player belongs to only one team. </li>
+  <li>Each player has a unique phone number, name, a position (such as left wing or goalie), a skill level, and a set of injury records. </li>
+  <li>Each team has exactly 1 captain who is a player. </li>
+  <li>A game is played between two teams (referred to as host_team and guest_team) and has a date (such as May 11th, 1999) and a score (such as 4 to 2). </li>
+</ul>
+Construct a clean and concise ER diagram for the NHL database.
+</span>
+</summary>
+<br>
+</details>
+
+## Relationships of Higher Degree
+The **degree** of a relationship type is the number of participating entity types. A relationship type of degree 2 is binary, a  relationship type of degree three is ternary, and those of degree n are called n-ary.
+- In general, an n-ary relationship is not equivalent to n binary relationships.
+- Constraints are harder to specify for higher-degree relationships (n > 2) than for binary relationships.
+- In general, 3 binary relationships can represent In general, 3 binary relationships can represent different information than a single ternary relationship (Check the Figure 3.17 for example)
+- If needed, the binary and n-ary relationships can all be included in the schema design (Check a and b in Figure 3.17 below, where all relationships convey different meanings)
+<p align="center">
+  <img src="Media\Lecture3\n-ary_1.png"/>
+</p>
+- If a particular binary relationship can be derived If a particular binary relationship can be derived from a higher-degree relationship at all times, then it is redundant
+- For example, the TAUGHT_DURING binary
+relationship in the following Figure 3.18 can be derived from the ternary relationship OFFERS (based on the meaning of the relationships)
+<p align="center">
+  <img src="Media\Lecture3\n-ary_2.png"/>
+</p>
+
+
 
 # References
 * Fundamentals of Database Systems (by Ramez Elmasri, Shamkant B. Navathe)
