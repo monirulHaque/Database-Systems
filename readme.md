@@ -71,6 +71,9 @@ This repository contains all of my lecture contents of the course Database Syste
 - [Lecture 4](#lecture-4)
   - [Enhanced Entity Relationship (EER) Modeling](#enhanced-entity-relationship-eer-modeling)
     - [Subclass and Superclass](#subclass-and-superclass)
+      - [Type Inheritance in Superclass / Subclass Relationships](#type-inheritance-in-superclass--subclass-relationships)
+    - [Specialization and Generalization](#specialization-and-generalization)
+      - [Specialization](#specialization)
 - [Lecture 5](#lecture-5)
   - [Relational Data Models](#relational-data-models)
     - [Table / Entity Set / Entity Type](#table--entity-set--entity-type)
@@ -589,10 +592,15 @@ TECHNICIAN IS-A EMPLOYEE</br>
   - Example: In the Figure 4.1, A salaried employee who is also an engineer belongs to the subclasses ENGINEER and SALARIED_EMPLOYEE. A salaried employee who is also an engineering manager belongs to the subclasses MANAGER, ENGINEER, and SALARIED_EMPLOYEE.
 - It is not necessary for superclasses to be members of a subclass. </br>
 
-
 <p align="center">
   <img src="Media\Lecture4\fig4_1.png" />
 </p>
+
+#### Type Inheritance in Superclass / Subclass Relationships
+The type of an entity is defined by the attributes it possesses and the relationship types in which it participates. **An entity in a subclass inherits all attributes and relationships from its superclass, in addition to having its own specific attributes and relationships.** This inheritance ensures that a subclass entity retains all characteristics of the superclass entity while being able to function as an independent entity type with its unique features.
+
+### Specialization and Generalization
+#### Specialization
 
 
 # Lecture 5
