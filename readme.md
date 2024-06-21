@@ -379,9 +379,13 @@ And miscellaneous data types such as: </br>
 Character Large Object (CLOB), for storing a large block of text in some form of text encoding.  </br>
 Binary Large Object (BLOB), for storing a collection of binary data such as images. </br>
 
-## Software Development Stages
+## Database Development Stages
+<p align="center">
+  <img src="Media/Lecture3/database_design_stages.png" width='500'/>
+</p>
 
 ## ER (Entity Relationship) Diagram 
+
 ### ER Diagram Exampls
 <details>
 <summary>
