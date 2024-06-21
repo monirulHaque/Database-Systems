@@ -398,7 +398,7 @@ Binary Large Object (BLOB), for storing a collection of binary data such as imag
 
 ## Software Development Stages
 <p align="center">
-  <img src="Media\Lecture3\softdesign.png"/>
+  <img src="Media\Lecture3\database_design_stages.png" width="500" />
 </p>
 
 The database design process involves the following steps: </br>
@@ -438,13 +438,13 @@ For example, every student of BRACU has a unique student_id. So, student_id can 
 Entities can have multiple keys and key attributes can be composite attributes too.
 
 <p align="center">
-  <img src="Media\Lecture3\ERD_Components_Entity_Atrributes.jpg"/>
+  <img src="Media\Lecture3\ERD_Components_Entity_Atrributes.jpg"/> </br>
   <i>Figure: Components of ER Diagram (Entities and Attributes)</i>
 </p>
 
 Consider the following Car Entity. Each of the Vehicle_id and Registration attributes of the entity type CAR is a key in its own right. The Registration attribute is an example of a composite key formed from two simple component attributes, State and Number, neither of which is a key on its own. Year, Model and Make can be simple  simple single-valued stored attributes and Color is a multivalued attribute as a Car model can have a few different colors on it. 
 <p align="center">
-  <img src="Media\Lecture3\attributes.PNG"/>
+  <img src="Media/Lecture3/attributes.png"/>
 </p>
 
 ### Relationships
@@ -471,7 +471,8 @@ This constraint indicates that every instance of the entity must participate in 
 This constraint indicates that some instances of the entity may or may not participate in the relationship. For example, in the relationship between "Student" and "Course" entities, a partial participation constraint on the "Student" side means that a student can exist without enrolling in any course.
 
 <p align="center">
-  <img src="Media/Lecture3/ERD_Components _Relationships.jpg"/>
+  <img src="Media/Lecture3/ERD_Components _Relationships.jpg"/> 
+  </br>
   <i>Figure: Components of ER Diagram (Relationships and Participation)</i>
 </p>
 
