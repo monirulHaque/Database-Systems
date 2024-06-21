@@ -74,6 +74,7 @@ This repository contains all of my lecture contents of the course Database Syste
       - [Type Inheritance in Superclass / Subclass Relationships](#type-inheritance-in-superclass--subclass-relationships)
     - [Specialization and Generalization](#specialization-and-generalization)
       - [Specialization](#specialization)
+      - [Generalization](#generalization)
 - [Lecture 5](#lecture-5)
   - [Relational Data Models](#relational-data-models)
     - [Table / Entity Set / Entity Type](#table--entity-set--entity-type)
@@ -601,7 +602,32 @@ The type of an entity is defined by the attributes it possesses and the relation
 
 ### Specialization and Generalization
 #### Specialization
+- Specialization is the process of defining a set of subclasses of a superclass.
+- The set of subclasses is based on distinguishing characteristics of the entities in the superclass.
+  - Example: {SECRETARY, ENGINEER, TECHNICIAN} is a specialization of EMPLOYEE based on job type.
+- A superclass may have several specializations.
+  - Exampple: Another specialization of EMPLOYEE based on
+method of pay is {SALARIED_EMPLOYEE,
+HOURLY_EMPLOYEE}.
+- Attributes of a subclass are called specific or local
+attributes.
+  - For example, the attribute TypingSpeed of SECRETARY
+- The subclass can also participate in specific relationship
+types.
+  - For example, a relationship BELONGS_TO of
+HOURLY_EMPLOYEE
 
+#### Generalization
+- If we can determine exactly those entities that will If we can determine exactly those entities that will become members of each subclass by a condition, the subclasses are called predicatedefined (or condition-defined) subclasses
+  - Condition is a constraint that determines subclass members.
+  - Display a predicate-defined subclass by writing the predicate condition next to the line attaching the predicate condition next to the line attaching the subclass to its superclass.
+
+- If all subclasses in a specialization have membership condition on the same attribute of the the superclass, specialization is called an attribute-defined specialization
+  - Attribute is called the defining attribute of the specialization
+  - Example: JobType is the defining attribute of the specialization {SECRETARY, TECHNICIAN, ENGINEER} of EMPLOYEE
+- If no condition determines membership the subclass is If no condition determines membership, the subclass is called user-defined
+  - Membership in a subclass is determined by the database users by applying an operation to add an entity to the users by applying an operation to add an entity to the subclass
+  - Membership in the subclass is specified individually for each entity in the superclass by the user 
 
 # Lecture 5
 ## Relational Data Models
