@@ -45,16 +45,6 @@ This repository contains all of my lecture contents of the course Database Syste
     - [Data Control Language (DCL)](#data-control-language-dcl)
     - [Transaction Control Language (TCL)](#transaction-control-language-tcl)
 - [Lecture 3](#lecture-3)
-  - [Relational Data Models](#relational-data-models)
-    - [Table / Entity Set / Entity Type](#table--entity-set--entity-type)
-    - [Attributes / Fields](#attributes--fields)
-      - [Key attributes](#key-attributes)
-        - [Primary Key](#primary-key)
-        - [Foreign Key](#foreign-key)
-        - [Primary Key vs Foreign Key](#primary-key-vs-foreign-key)
-    - [Attribute value / Column value / Data element / Unit of data](#attribute-value--column-value--data-element--unit-of-data)
-    - [Records / Rows / Entities](#records--rows--entities)
-    - [Data types](#data-types)
   - [Software Development Stages](#software-development-stages)
   - [ER (Entity Relationship) Diagram](#er-entity-relationship-diagram)
     - [Entities](#entities)
@@ -78,6 +68,19 @@ This repository contains all of my lecture contents of the course Database Syste
       - [Examples from the Textbook](#examples-from-the-textbook)
       - [Examples from the Practice Sheet](#examples-from-the-practice-sheet)
   - [Relationships of Higher Degree](#relationships-of-higher-degree)
+- [Lecture 4](#lecture-4)
+  - [Enhanced Entity Relationship (EER) Modeling](#enhanced-entity-relationship-eer-modeling)
+- [Lecture 5](#lecture-5)
+  - [Relational Data Models](#relational-data-models)
+    - [Table / Entity Set / Entity Type](#table--entity-set--entity-type)
+    - [Attributes / Fields](#attributes--fields)
+      - [Key attributes](#key-attributes)
+        - [Primary Key](#primary-key)
+        - [Foreign Key](#foreign-key)
+        - [Primary Key vs Foreign Key](#primary-key-vs-foreign-key)
+    - [Attribute value / Column value / Data element / Unit of data](#attribute-value--column-value--data-element--unit-of-data)
+    - [Records / Rows / Entities](#records--rows--entities)
+    - [Data types](#data-types)
 - [References](#references)
 
 # Course Overview
@@ -333,72 +336,6 @@ The TCL commands are used to manage transactions in the database. These are used
 </br></br>
 
 # Lecture 3
-## Relational Data Models
-The relational model represents how data is stored in Relational Databases using multiple tables with their relations to each other.
-
-<p align="center">
-  <img src="Media\Lecture1\lec1dbdissect_t.png" width='500'/>
-</p>
-
-<p align="center">
-  <img src="Media\Lecture3\relational_database_example.png" width='500'/>
-</p>
-
-### Table / Entity Set / Entity Type
-A table contains all the fields, attributes and records for a type of entity. A database will most probably contain more than one table.
-
-### Attributes / Fields
-Column headings are known as fields. Each field contains a different attribute. For every table, a unit of data is entered into each field.
-
-#### Key attributes
-Attributes that are distinct for each entity in the table are called Key attributes.
-##### Primary Key
-A primary key is a special attribute or field within a database table that uniquely identifies each record or row in that table. It acts as a distinctive label for every information stored in the table, ensuring that no two records have the same identifier. This unique identification helps locate, access, and manipulate specific data within the table.
-
-##### Foreign Key
-Tables in a relational database do not stay isolated from each other. They need to have relationships between them. Tables are linked with one another through a key column (the primary key) of one table that’s also present in the related table as a foreign key.
-
-##### Primary Key vs Foreign Key
-| Basis           | Primary Key                                                                                         | Foreign Key                                                                                               |
-| --------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| Definition      | A primary key is a unique identifier for each record in a table.                                    | A foreign key establishes a relationship between tables by referencing the primary key of another table.  |
-| Basic           | Ensures uniqueness and data integrity within a single table.                                        | Establishes relationships and maintains referential integrity between tables.                             |
-| NULL            | Does not allow NULL values in the primary key field.                                                | Allows NULL values in the foreign key field, indicating a missing or unspecified relationship.            |
-| Count           | Only one primary key can exist per table.                                                           | Multiple foreign keys can exist within a table, depending on the relationships with other tables.         |
-| Duplication     | No duplicate primary key values are allowed within the table.                                       | Can contain duplicate foreign key values, reflecting multiple records associated with the same reference. |
-| Indexing        | Primary keys are automatically indexed to enhance data retrieval speed.                             | Foreign keys can be indexed but are not automatically indexed.                                            |
-| Deletion        | Deleting a record with a primary key constraint can affect referential integrity in related tables. | Deleting a record with a foreign key constraint can be restricted or cascade to maintain integrity.       |
-| Insertion       | Each new record must have a unique primary key value assigned.                                      | The foreign key can reference an existing primary key value or be NULL if the relationship is optional.   |
-| Temporary table | Primary keys can be applied to temporary tables.                                                    | Foreign keys can also be applied to temporary tables to establish relationships.                          |
-| Relationship    | Primary keys define the basis for establishing relationships with other tables.                     | Foreign keys establish relationships and connect data between related tables.                             |
-
-### Attribute value / Column value / Data element / Unit of data
-Each individual piece of data entered into a column is a unit of data. These units are also called data elements or column values.
-
-### Records / Rows / Entities
-A record consists of a collection of data for each entity. It’s also known as a row in the table.
-
-
-
-### Data types
-To keep the data consistent from one record to the next, an appropriate data type is assigned to each column. The data type of a column determines what type of data can be stored in each column.</br>
-Data types are also a way of classifying data values or column values. Different kinds of data values or column values require different amounts of memory to store them. Different operations can be performed on those column values based on their datatypes. </br>
-
-Some common data types used in databases are: </br>
-
-**Numeric data types** such as INT, TINYINT, BIGINT, FLOAT and REAL. </br>
-
-**Date and time data types** such as DATE, TIME and DATETIME. </br>
-
-**Character and string data types** such as CHAR and VARCHAR. </br>
-
-**Binary data types** such as BINARY and VARBINARY. </br>
-
-And miscellaneous data types such as: </br>
-
-Character Large Object (CLOB), for storing a large block of text in some form of text encoding.  </br>
-Binary Large Object (BLOB), for storing a collection of binary data such as images. </br>
-
 ## Software Development Stages
 <p align="center">
   <img src="Media\Lecture3\database_design_stages.png" width="500" />
@@ -419,8 +356,7 @@ The ER model describes data as entities, relationships, and attributes.
 
 
 ### Entities
-The basic concept that the ER model represents is
-an entity, which is a thing or object in the real world with an independent existence. </br>
+The basic concept that the ER model represents is an entity, which is a thing or object in the real world with an independent existence. </br>
 An entity may be an object with a physical existence (for example, a particular person, car, house, or employee) or it may be an object with a conceptual existence (for instance, a company, a job, or a university course).
 ### Attributes
 Each entity has attributes—the particular properties that describe it. </br>
@@ -616,14 +552,87 @@ The **degree** of a relationship type is the number of participating entity type
 <p align="center">
   <img src="Media\Lecture3\n-ary_1.png"/>
 </p>
-- If a particular binary relationship can be derived If a particular binary relationship can be derived from a higher-degree relationship at all times, then it is redundant
-- For example, the TAUGHT_DURING binary
-relationship in the following Figure 3.18 can be derived from the ternary relationship OFFERS (based on the meaning of the relationships)
+- If a particular binary relationship can be derived If a particular binary relationship can be derived from a higher-degree relationship at all times, then it is redundant. For example, the TAUGHT_DURING binary relationship in the following Figure 3.18 can be derived from the ternary relationship OFFERS (based on the meaning of the relationships)
 <p align="center">
   <img src="Media\Lecture3\n-ary_2.png"/>
 </p>
 
+# Lecture 4
+## Enhanced Entity Relationship (EER) Modeling
+ER Diagram was sufficient for most of the applications but database designers wanted more accurate database schemas that reflect the data properties and constraints more precisely. Hence, EER Diagram was introduced. </br>
 
+The EER model includes all the modeling concepts of the ER model. The Additional concepts in EER: </br> 
+- subclass/superclass
+- specialization/generalization
+- category or union types
+- attribute and relationship inheritance
+
+# Lecture 5
+## Relational Data Models
+The relational model represents how data is stored in Relational Databases using multiple tables with their relations to each other.
+
+<p align="center">
+  <img src="Media\Lecture1\lec1dbdissect_t.png" width='500'/>
+</p>
+
+<p align="center">
+  <img src="Media\Lecture3\relational_database_example.png" width='500'/>
+</p>
+
+### Table / Entity Set / Entity Type
+A table contains all the fields, attributes and records for a type of entity. A database will most probably contain more than one table.
+
+### Attributes / Fields
+Column headings are known as fields. Each field contains a different attribute. For every table, a unit of data is entered into each field.
+
+#### Key attributes
+Attributes that are distinct for each entity in the table are called Key attributes.
+##### Primary Key
+A primary key is a special attribute or field within a database table that uniquely identifies each record or row in that table. It acts as a distinctive label for every information stored in the table, ensuring that no two records have the same identifier. This unique identification helps locate, access, and manipulate specific data within the table.
+
+##### Foreign Key
+Tables in a relational database do not stay isolated from each other. They need to have relationships between them. Tables are linked with one another through a key column (the primary key) of one table that’s also present in the related table as a foreign key.
+
+##### Primary Key vs Foreign Key
+| Basis           | Primary Key                                                                                         | Foreign Key                                                                                               |
+| --------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Definition      | A primary key is a unique identifier for each record in a table.                                    | A foreign key establishes a relationship between tables by referencing the primary key of another table.  |
+| Basic           | Ensures uniqueness and data integrity within a single table.                                        | Establishes relationships and maintains referential integrity between tables.                             |
+| NULL            | Does not allow NULL values in the primary key field.                                                | Allows NULL values in the foreign key field, indicating a missing or unspecified relationship.            |
+| Count           | Only one primary key can exist per table.                                                           | Multiple foreign keys can exist within a table, depending on the relationships with other tables.         |
+| Duplication     | No duplicate primary key values are allowed within the table.                                       | Can contain duplicate foreign key values, reflecting multiple records associated with the same reference. |
+| Indexing        | Primary keys are automatically indexed to enhance data retrieval speed.                             | Foreign keys can be indexed but are not automatically indexed.                                            |
+| Deletion        | Deleting a record with a primary key constraint can affect referential integrity in related tables. | Deleting a record with a foreign key constraint can be restricted or cascade to maintain integrity.       |
+| Insertion       | Each new record must have a unique primary key value assigned.                                      | The foreign key can reference an existing primary key value or be NULL if the relationship is optional.   |
+| Temporary table | Primary keys can be applied to temporary tables.                                                    | Foreign keys can also be applied to temporary tables to establish relationships.                          |
+| Relationship    | Primary keys define the basis for establishing relationships with other tables.                     | Foreign keys establish relationships and connect data between related tables.                             |
+
+### Attribute value / Column value / Data element / Unit of data
+Each individual piece of data entered into a column is a unit of data. These units are also called data elements or column values.
+
+### Records / Rows / Entities
+A record consists of a collection of data for each entity. It’s also known as a row in the table.
+
+
+
+### Data types
+To keep the data consistent from one record to the next, an appropriate data type is assigned to each column. The data type of a column determines what type of data can be stored in each column.</br>
+Data types are also a way of classifying data values or column values. Different kinds of data values or column values require different amounts of memory to store them. Different operations can be performed on those column values based on their datatypes. </br>
+
+Some common data types used in databases are: </br>
+
+**Numeric data types** such as INT, TINYINT, BIGINT, FLOAT and REAL. </br>
+
+**Date and time data types** such as DATE, TIME and DATETIME. </br>
+
+**Character and string data types** such as CHAR and VARCHAR. </br>
+
+**Binary data types** such as BINARY and VARBINARY. </br>
+
+And miscellaneous data types such as: </br>
+
+Character Large Object (CLOB), for storing a large block of text in some form of text encoding.  </br>
+Binary Large Object (BLOB), for storing a collection of binary data such as images. </br>
 
 # References
 * Fundamentals of Database Systems (by Ramez Elmasri, Shamkant B. Navathe)
