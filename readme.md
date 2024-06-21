@@ -70,6 +70,7 @@ This repository contains all of my lecture contents of the course Database Syste
   - [Relationships of Higher Degree](#relationships-of-higher-degree)
 - [Lecture 4](#lecture-4)
   - [Enhanced Entity Relationship (EER) Modeling](#enhanced-entity-relationship-eer-modeling)
+    - [Subclass and Superclass](#subclass-and-superclass)
 - [Lecture 5](#lecture-5)
   - [Relational Data Models](#relational-data-models)
     - [Table / Entity Set / Entity Type](#table--entity-set--entity-type)
@@ -552,6 +553,7 @@ The **degree** of a relationship type is the number of participating entity type
 <p align="center">
   <img src="Media\Lecture3\n-ary_1.png"/>
 </p>
+
 - If a particular binary relationship can be derived If a particular binary relationship can be derived from a higher-degree relationship at all times, then it is redundant. For example, the TAUGHT_DURING binary relationship in the following Figure 3.18 can be derived from the ternary relationship OFFERS (based on the meaning of the relationships)
 <p align="center">
   <img src="Media\Lecture3\n-ary_2.png"/>
@@ -562,10 +564,36 @@ The **degree** of a relationship type is the number of participating entity type
 ER Diagram was sufficient for most of the applications but database designers wanted more accurate database schemas that reflect the data properties and constraints more precisely. Hence, EER Diagram was introduced. </br>
 
 The EER model includes all the modeling concepts of the ER model. The Additional concepts in EER: </br> 
-- subclass/superclass
-- specialization/generalization
+- subclass and superclass
+- specialization and generalization
 - category or union types
 - attribute and relationship inheritance
+
+### Subclass and Superclass
+An entity type (e.g. EMPLOYEE) often have meaningful subgroupings called **subclasses** or **subtypes** (e.g., SECRETARY, ENGINEER). Each subclass is a subset of the entities in the **superclass** or **supertype** (e.g., EMPLOYEE). </br>
+
+- These are called superclass/subclass relationships. For example, </br>
+EMPLOYEE/SECRETARY</br>
+EMPLOYEE/TECHNICIAN</br>
+**...**</br>
+- These are also called IS-A relationships. For example,</br>
+SECRETARY IS-A EMPLOYEE</br>
+TECHNICIAN IS-A EMPLOYEE</br>
+**...**</br>
+
+
+- An entity that is a member of a subclass represents the same real-world entity as some member of the superclass.
+  - The subclass member represents the same entity in a distinct specific role.
+  - An entity cannot exist in the database solely by being a member of a subclass; it must also be a member of the superclass.
+  - A member of the superclass can optionally be included as a member of any number of its subclasses.
+  - Example: In the Figure 4.1, A salaried employee who is also an engineer belongs to the subclasses ENGINEER and SALARIED_EMPLOYEE. A salaried employee who is also an engineering manager belongs to the subclasses MANAGER, ENGINEER, and SALARIED_EMPLOYEE.
+- It is not necessary for superclasses to be members of a subclass. </br>
+
+
+<p align="center">
+  <img src="Media\Lecture4\fig4_1.png" />
+</p>
+
 
 # Lecture 5
 ## Relational Data Models
