@@ -8,7 +8,7 @@ This repository contains all of my lecture contents of the course Database Syste
 - [Course Overview](#course-overview)
   - [Tentative Marks Distribution](#tentative-marks-distribution)
   - [Consultaion](#consultaion)
-- [Lecture 1](#lecture-1)
+- [Lecture 0](#lecture-0)
   - [Basic Definitions](#basic-definitions)
     - [Data](#data)
     - [Database](#database)
@@ -19,7 +19,7 @@ This repository contains all of my lecture contents of the course Database Syste
   - [A Brief History](#a-brief-history)
     - [Timeline](#timeline)
   - [Faciliteis and Functionalities of DBMS](#faciliteis-and-functionalities-of-dbms)
-- [Lecture 2](#lecture-2)
+- [Lecture 1](#lecture-1)
   - [Database Users](#database-users)
   - [When not to use a DBMS](#when-not-to-use-a-dbms)
   - [Data Models](#data-models)
@@ -44,7 +44,7 @@ This repository contains all of my lecture contents of the course Database Syste
       - [DELETE Command](#delete-command)
     - [Data Control Language (DCL)](#data-control-language-dcl)
     - [Transaction Control Language (TCL)](#transaction-control-language-tcl)
-- [Lecture 3](#lecture-3)
+- [Lecture 2](#lecture-2)
   - [Software Development Stages](#software-development-stages)
   - [ER (Entity Relationship) Diagram](#er-entity-relationship-diagram)
     - [Entities](#entities)
@@ -68,14 +68,14 @@ This repository contains all of my lecture contents of the course Database Syste
       - [Examples from the Textbook](#examples-from-the-textbook)
       - [Examples from the Practice Sheet](#examples-from-the-practice-sheet)
   - [Relationships of Higher Degree](#relationships-of-higher-degree)
-- [Lecture 4](#lecture-4)
+- [Lecture 3](#lecture-3)
   - [Enhanced Entity Relationship (EER) Modeling](#enhanced-entity-relationship-eer-modeling)
     - [Subclass and Superclass](#subclass-and-superclass)
       - [Type Inheritance in Superclass / Subclass Relationships](#type-inheritance-in-superclass--subclass-relationships)
     - [Specialization and Generalization](#specialization-and-generalization)
       - [Specialization](#specialization)
       - [Generalization](#generalization)
-- [Lecture 5](#lecture-5)
+- [Lecture 4](#lecture-4)
   - [Relational Data Models](#relational-data-models)
     - [Table / Entity Set / Entity Type](#table--entity-set--entity-type)
     - [Attributes / Fields](#attributes--fields)
@@ -84,8 +84,9 @@ This repository contains all of my lecture contents of the course Database Syste
         - [Foreign Key](#foreign-key)
         - [Primary Key vs Foreign Key](#primary-key-vs-foreign-key)
     - [Attribute value / Column value / Data element / Unit of data](#attribute-value--column-value--data-element--unit-of-data)
-    - [Records / Rows / Entities](#records--rows--entities)
+    - [Records / Rows / Entities / Tuples](#records--rows--entities--tuples)
     - [Data types](#data-types)
+- [Characteristics of Relational Data Model](#characteristics-of-relational-data-model)
 - [References](#references)
 
 # Course Overview
@@ -104,7 +105,7 @@ There is no marks for attendance this semester but you must attend at least 70% 
 Email: ext.monirul.haque@bracu.ac.bd 
 ![Consultation](Media/Consultation.png)
 
-# Lecture 1
+# Lecture 0
 ## Basic Definitions
 ### Data
 Known facts that can be recorded and have an implicit meaning. 
@@ -191,7 +192,7 @@ To learn more, check out Professor Pavlo's lecture https://www.youtube.com/watch
 
 </br></br>
 
-# Lecture 2
+# Lecture 1
 ## Database Users
 - **Actors On the Scene:** Those who actually use and control the database 
 content, and those who design, develop and maintain database applications.
@@ -340,7 +341,7 @@ The TCL commands are used to manage transactions in the database. These are used
 
 </br></br>
 
-# Lecture 3
+# Lecture 2
 ## Software Development Stages
 <p align="center">
   <img src="Media\Lecture3\database_design_stages.png" width="500" />
@@ -563,7 +564,7 @@ The **degree** of a relationship type is the number of participating entity type
   <img src="Media\Lecture3\n-ary_2.png"/>
 </p>
 
-# Lecture 4
+# Lecture 3
 ## Enhanced Entity Relationship (EER) Modeling
 ER Diagram was sufficient for most of the applications but database designers wanted more accurate database schemas that reflect the data properties and constraints more precisely. Hence, EER Diagram was introduced. </br>
 
@@ -629,7 +630,7 @@ HOURLY_EMPLOYEE
   - Membership in a subclass is determined by the database users by applying an operation to add an entity to the users by applying an operation to add an entity to the subclass
   - Membership in the subclass is specified individually for each entity in the superclass by the user 
 
-# Lecture 5
+# Lecture 4
 ## Relational Data Models
 The relational model represents how data is stored in Relational Databases using multiple tables with their relations to each other.
 
@@ -672,7 +673,7 @@ Tables in a relational database do not stay isolated from each other. They need 
 ### Attribute value / Column value / Data element / Unit of data
 Each individual piece of data entered into a column is a unit of data. These units are also called data elements or column values.
 
-### Records / Rows / Entities
+### Records / Rows / Entities / Tuples
 A record consists of a collection of data for each entity. It’s also known as a row in the table.
 
 
@@ -695,6 +696,9 @@ And miscellaneous data types such as: </br>
 
 Character Large Object (CLOB), for storing a large block of text in some form of text encoding.  </br>
 Binary Large Object (BLOB), for storing a collection of binary data such as images. </br>
+
+# Characteristics of Relational Data Model
+To be Added
 
 # References
 * Fundamentals of Database Systems (by Ramez Elmasri, Shamkant B. Navathe)
