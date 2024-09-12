@@ -1,46 +1,49 @@
 Functional Dependencies are like rules that describe how different pieces of information in a database relate to each other. They help us understand which attributes (columns) determine the values of other attributes.
+
 Let's break it down with some everyday examples:
 
-Basic Concept:
+1. Basic Concept:
 If we say "X determines Y" (written as X -> Y), it means that if we know the value of X, we can figure out the value of Y.
 
 Example 1: Student ID -> Student Name
 If you know a student's ID, you can determine their name. Each ID is linked to only one name.
+
 Example 2: {Course Code, Semester} -> Instructor
 If you know both the course code and the semester, you can determine who's teaching that course.
 
-Real-world analogies:
+2. Real-world analogies:
 
 a) Social Security Number (SSN) -> Name
 Your SSN uniquely identifies you, so knowing the SSN lets us know your name.
+
 b) ISBN -> Book Title
 Each book has a unique ISBN, so knowing the ISBN tells us the book's title.
+
 c) {Make, Model, Year} -> Car Price
 Knowing a car's make, model, and year usually determines its base price.
 
-Why they're important:
+3. Why they're important:
+- They help us design better databases by showing us which attributes should be grouped together.
+- They help prevent data inconsistencies and redundancies.
 
+4. Types of Dependencies:
 
-They help us design better databases by showing us which attributes should be grouped together.
-They help prevent data inconsistencies and redundancies.
-
-
-Types of Dependencies:
-
-a) Full Dependency:
+a) Full Dependency: 
 When you need all parts of X to determine Y.
 Example: {Student ID, Course Code} -> Grade
 You need both the student ID and the course code to know a student's grade in that course.
+
 b) Partial Dependency:
 When only part of X is needed to determine Y.
 Example: {Student ID, Course Code} -> Student Name
 Here, just the Student ID is enough to know the Student Name; we don't need the Course Code.
+
 c) Transitive Dependency:
 When X -> Y and Y -> Z, then X -> Z indirectly.
 Example: Student ID -> Department Number -> Department Name
 Student ID determines the Department Number, which in turn determines the Department Name.
-Understanding these dependencies helps database designers create efficient, consistent, and easy-to-maintain database structures. They're the foundation for the normalization process, which aims to organize data in a way that reduces redundancy and dependency issues.
 
+Understanding these dependencies helps database designers create efficient, consistent, and easy-to-maintain database structures. They're the foundation for the normalization process, which aims to organize data in a way that reduces redundancy and dependency issues.
 
 1. First Normal Form (1NF):
 
