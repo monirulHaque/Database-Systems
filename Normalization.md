@@ -1,3 +1,5 @@
+## Functional Dependancy 
+
 Functional Dependencies are like rules that describe how different pieces of information in a database relate to each other. They help us understand which attributes (columns) determine the values of other attributes.
 
 Let's break it down with some everyday examples:
@@ -44,6 +46,8 @@ Example: Student ID -> Department Number -> Department Name
 Student ID determines the Department Number, which in turn determines the Department Name.
 
 Understanding these dependencies helps database designers create efficient, consistent, and easy-to-maintain database structures. They're the foundation for the normalization process, which aims to organize data in a way that reduces redundancy and dependency issues.
+
+## Normal Forms
 
 1. First Normal Form (1NF):
 
